@@ -1,0 +1,127 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://Assets/Scenes/Block/BlockFactory.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/blocks/block_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/blocks/block_2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/blocks/block_3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/blocks/block_4.jpg" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16.7474, 239.74 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 19.932, 112.207 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 20.3148, 225.233 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 18.9005, 190.606 )
+
+[node name="BlockFactory" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="Block1" type="KinematicBody2D" parent="."]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1.20831, 0, 0, 1, -0.198639, -0.358482 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Sprite" type="Sprite" parent="Block1"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block1"]
+
+transform/pos = Vector2( -0.198639, -0.358482 )
+transform/scale = Vector2( 1.20831, 1 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Block2" type="KinematicBody2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 73.8197, 0 )
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1.00943, 0, 0, 2.14073, -0.216141, 0.249373 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Sprite" type="Sprite" parent="Block2"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block2"]
+
+transform/pos = Vector2( -0.216141, 0.249373 )
+transform/scale = Vector2( 1.00943, 2.14073 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Block3" type="KinematicBody2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 139.437, -15 )
+input/pickable = false
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Sprite" type="Sprite" parent="Block3"]
+
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block3"]
+
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Block4" type="KinematicBody2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 212.838, -50.3318 )
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1.05667, 0, 0, 1.26265, -1.24115, 50.6962 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+
+[node name="Sprite" type="Sprite" parent="Block4"]
+
+transform/pos = Vector2( -1.19745, 50.2939 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block4"]
+
+transform/pos = Vector2( -1.24115, 50.6962 )
+transform/scale = Vector2( 1.05667, 1.26265 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
+

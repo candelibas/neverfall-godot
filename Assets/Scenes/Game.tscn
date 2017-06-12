@@ -1,20 +1,15 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Assets/Scripts/Camera.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/bg_1.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/background/bg_1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Scripts/Player.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sprites/kangaro.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/block_2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Scenes/Dragon/Dragon.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 40.6251, 56.875 )
-
-[sub_resource type="RectangleShape2D" id=2]
-
-custom_solver_bias = 0.0
-extents = Vector2( 10, 203.607 )
 
 [node name="World" type="Node2D"]
 
@@ -79,7 +74,9 @@ script/script = ExtResource( 3 )
 [node name="Sprite" type="Sprite" parent="Player"]
 
 texture = ExtResource( 4 )
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 
@@ -88,62 +85,12 @@ transform/scale = Vector2( 0.500771, 0.531877 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
-__meta__ = { "_edit_lock_":true }
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Block" type="StaticBody2D" parent="."]
+[node name="Dragon" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 60, 590 )
-input/pickable = false
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1.76923, 0, 0, 1.15419, 4.76837e-06, -5 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Sprite" type="Sprite" parent="Block"]
-
-texture = ExtResource( 5 )
-__meta__ = { "_edit_lock_":true }
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block"]
-
-transform/pos = Vector2( 4.76837e-06, -5 )
-transform/scale = Vector2( 1.76923, 1.15419 )
-shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
-__meta__ = { "_edit_lock_":true }
-
-[node name="Block1" type="StaticBody2D" parent="."]
-
-transform/pos = Vector2( 210, 540 )
-input/pickable = false
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1.76923, 0, 0, 1.15419, 4.76837e-06, -5 )
-shapes/0/trigger = false
-collision/layers = 1
-collision/mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
-
-[node name="Sprite" type="Sprite" parent="Block1"]
-
-texture = ExtResource( 5 )
-__meta__ = { "_edit_lock_":true }
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Block1"]
-
-transform/pos = Vector2( 4.76837e-06, -5 )
-transform/scale = Vector2( 1.76923, 1.15419 )
-shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
-__meta__ = { "_edit_lock_":true }
+transform/pos = Vector2( 279.924, 77.3475 )
 
 

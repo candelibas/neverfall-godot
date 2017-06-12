@@ -1,0 +1,1 @@
+kangaro_sprite_01.png.png 0 0, kangaro_sprite_02.png.png 40 0, kangaro_sprite_03.png.png 80 1, kangaro_sprite_04.png.png 121 0, kangaro_sprite_05.png.png 166 0, kangaro_sprite_06.png.png 203 0.

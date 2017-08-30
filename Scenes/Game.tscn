@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Scenes/Block.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Sprites/Background/bg1.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+
+[node name="Node" type="Node"]
+
+[node name="block" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 186.371, 478.852 )
+
+[node name="block1" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 333.292, 521.024 )
+
+[node name="block2" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 537.348, 477.492 )
+
+[node name="parallax_background" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = false
+
+[node name="layer1" type="ParallaxLayer" parent="parallax_background"]
+
+motion/scale = Vector2( 1, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 0, 0 )
+
+[node name="sprite" type="Sprite" parent="parallax_background/layer1"]
+
+transform/pos = Vector2( 326.225, 241.067 )
+texture = ExtResource( 2 )
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+
+

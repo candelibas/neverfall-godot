@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Assets/Sprites/Waves/waves_01.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Waves/waves_02.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Waves/waves_03.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "wave",
+"speed": 2.0
+} ]
+
+[node name="waves" type="AnimatedSprite"]
+
+transform/pos = Vector2( 320.222, 216.066 )
+frames = SubResource( 1 )
+animation = "wave"
+frame = 1
+playing = true
+
+

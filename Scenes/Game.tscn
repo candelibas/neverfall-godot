@@ -1,22 +1,24 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Scenes/Block.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Sprites/Background/bg1.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Dragon.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Waves.tscn" type="PackedScene" id=5]
 
 [node name="Node" type="Node"]
 
 [node name="block" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 186.371, 478.852 )
+transform/pos = Vector2( 43.4347, 487.716 )
 
 [node name="block1" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 333.292, 521.024 )
+transform/pos = Vector2( 246.865, 436.813 )
 
 [node name="block2" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 537.348, 477.492 )
+transform/pos = Vector2( 402.168, 463.088 )
 
 [node name="parallax_background" type="ParallaxBackground" parent="."]
 
@@ -39,9 +41,42 @@ motion/mirroring = Vector2( 0, 0 )
 
 [node name="sprite" type="Sprite" parent="parallax_background/layer1"]
 
-transform/pos = Vector2( 326.225, 241.067 )
 texture = ExtResource( 2 )
+centered = false
 
 [node name="player" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 42.2497, 102.18 )
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+offset = Vector2( -45, -100 )
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 5.0
+drag_margin/left = 0.68
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="dragon" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -47.0277, 62.8187 )
+transform/scale = Vector2( 0.673289, 0.673289 )
+frame = 2
+
+[node name="waves" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 318.875, 448.518 )
+frame = 0
 
 

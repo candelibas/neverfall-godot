@@ -21,14 +21,13 @@ var jumping = true # we are starting with jumping - (may be not. we can change t
 # Animation
 var anim = "idle"
 
-var input
+onready var player = preload("res://Scenes/Player.tscn")
 
 func _ready():
 	# Get instance of powerBar and hide for default
 	powerBarVal = powerBarProgress.instance()
 	add_child(powerBarVal)
 	powerBarVal.hide()
-	
 	# Set
 	set_process_input(true)
 	set_fixed_process(true)
@@ -45,6 +44,7 @@ func _input(event):
 
 # Physics goes here!
 func _fixed_process(delta):
+	print("viewport:",get_viewport_rect().size.y)
 	
 	# If input pressed, set powerBar for release
 	if Input.is_action_pressed("ui_select"):
@@ -66,8 +66,6 @@ func _fixed_process(delta):
 		var normal = get_collision_normal()
 		motion = normal.slide(motion)
 		velocity = normal.slide(velocity)
-
-		print("ÖLDÜN")
 		velocity.y = 0
 	
 	# Set animation
@@ -88,3 +86,6 @@ func prepareToJump():
 	
 #func jump(speed):
 #	velocity.y = speed
+
+func die():
+	print("dead")

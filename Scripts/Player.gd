@@ -20,6 +20,9 @@ var jumping = true # we are starting with jumping - (may be not. we can change t
 
 # Animation
 var anim = "idle"
+ 
+# Stats
+var score = 0
 
 onready var player = preload("res://Scenes/Player.tscn")
 
@@ -44,7 +47,7 @@ func _input(event):
 
 # Physics goes here!
 func _fixed_process(delta):
-	print("viewport:",get_viewport_rect().size.y)
+	#print("viewport:",get_viewport_rect().size.y)
 	
 	# If input pressed, set powerBar for release
 	if Input.is_action_pressed("ui_select"):
@@ -74,7 +77,7 @@ func _fixed_process(delta):
 	else:
 		anim = "jump"
 		
-	print(velocity.y)
+	#print(velocity.y)
 		
 	sprite.play(anim)
 	

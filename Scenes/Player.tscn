@@ -3,8 +3,8 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Kangaro/kang_1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/Kangaro/kang_3.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Sprites/Kangaro/kang_2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sprites/Kangaro/kang_4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Kangaro/kang_4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/Kangaro/kang_2.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,19 +19,20 @@ animations = [ {
 "name": "idle",
 "speed": 3.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "hold_jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": false,
 "name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "hold_jump",
 "speed": 5.0
 } ]
 
 [node name="player" type="KinematicBody2D"]
 
+editor/display_folded = true
 transform/pos = Vector2( 184.078, 70.0475 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
